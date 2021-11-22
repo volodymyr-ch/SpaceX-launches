@@ -27,7 +27,7 @@ export const LaunchPage: React.FC<Props> = () => {
     <div aria-label="launch-page">
       {data.links.flickr_images.length
         ? data.links.flickr_images.map((image) => (
-          <img src={image} alt="test-url" />
+          <img key={image} src={image} alt="test-url" />
         ))
         : null}
     </div>
