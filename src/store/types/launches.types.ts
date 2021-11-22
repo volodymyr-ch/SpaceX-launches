@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export const GET_LAUNCH_DATA_REQUEST = '[Launch] Get launch data REQUEST';
 export const GET_LAUNCH_DATA_SUCCESS = '[Launch] Get launch data SUCCESS';
 export const GET_LAUNCH_DATA_FAILED = '[Launch] Get launch data FAILED';
@@ -7,9 +8,16 @@ export interface GetLaunchDataRequest {
   payload: number;
 }
 
+export type LaunchDataType = {
+  flight_number: number;
+  mission_name: string;
+  launch_date_utc: Date | null;
+  links: { flickr_images: string[] };
+};
+
 export interface GetLaunchDataSuccess {
   type: typeof GET_LAUNCH_DATA_SUCCESS;
-  payload: any;
+  payload: LaunchDataType;
 }
 
 export interface GetLaunchDataFailed {

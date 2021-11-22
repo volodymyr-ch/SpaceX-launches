@@ -3,6 +3,7 @@ import {
   GET_LAUNCH_DATA_REQUEST,
   GET_LAUNCH_DATA_SUCCESS,
   GET_LAUNCH_DATA_FAILED,
+  LaunchDataType,
 } from 'store/types';
 
 export const getLaunchDataRequest = (id: number): LaunchesActionTypes => ({
@@ -10,8 +11,9 @@ export const getLaunchDataRequest = (id: number): LaunchesActionTypes => ({
   payload: id,
 });
 
-export const getLaunchDataSuccess = (res: any): LaunchesActionTypes => ({
-  // any temporary
+export const getLaunchDataSuccess = (
+  res: LaunchDataType,
+): LaunchesActionTypes => ({
   type: GET_LAUNCH_DATA_SUCCESS,
   payload: res,
 });

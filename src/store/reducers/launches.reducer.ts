@@ -3,16 +3,22 @@ import {
   GET_LAUNCH_DATA_REQUEST,
   GET_LAUNCH_DATA_SUCCESS,
   LaunchesActionTypes,
+  LaunchDataType,
 } from 'store/types';
 
 type LaunchesState = {
-  data: any; // for now
+  data: LaunchDataType;
   loading: boolean;
   loaded: boolean;
 };
 
 const initialState: LaunchesState = {
-  data: {},
+  data: {
+    flight_number: 0,
+    mission_name: '',
+    launch_date_utc: null,
+    links: { flickr_images: [] },
+  },
   loading: false,
   loaded: false,
 };
