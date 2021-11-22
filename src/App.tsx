@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { LaunchPage } from 'components';
+
 const App = () => (
-  <div>
-    <h1>SpaceX launch</h1>
-  </div>
+  <LaunchPage />
 );
 
 export default App;

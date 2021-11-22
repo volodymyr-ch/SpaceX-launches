@@ -1,0 +1,18 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { withStore } from 'utils';
+
+import LaunchPage from './';
+
+export const Template = ({ ...args }) => (
+  withStore(<LaunchPage {...args} />)
+);
+
+<Meta title="pages/LaunchPage" component={LaunchPage} />
+
+# LaunchPage
+
+<Canvas>
+  <Story name="default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
