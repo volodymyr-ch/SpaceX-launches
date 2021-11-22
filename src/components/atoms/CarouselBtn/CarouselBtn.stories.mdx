@@ -1,0 +1,28 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import CarouselBtn, { DirectionsType } from './';
+
+export const Template = ({ ...args }) => <CarouselBtn {...args} />;
+
+<Meta title="atoms/CarouselBtn" component={CarouselBtn} />
+
+# CarouselBtn
+
+<Canvas>
+  <Story
+    name="next"
+    args={{
+      direction: DirectionsType.NEXT,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="prev"
+    args={{
+      direction: DirectionsType.PREV,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
