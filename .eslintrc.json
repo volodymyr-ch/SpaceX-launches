@@ -17,7 +17,8 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src"]
       }
     }
   },
@@ -44,6 +45,8 @@
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
       }
-    ]
+    ],
+    "default-param-last": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }
