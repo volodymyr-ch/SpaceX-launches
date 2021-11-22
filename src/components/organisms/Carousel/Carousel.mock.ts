@@ -10,6 +10,7 @@ export const carouselDataFirstImageMock: CarouselDataMockType = {
     'https://farm8.staticflickr.com/7321/26812794884_bf91665325_o.jpg',
     'https://farm8.staticflickr.com/7337/26812792104_9323121f0b_o.jpg',
     'https://farm8.staticflickr.com/7376/27421461715_5640d2b87a_o.jpg',
+    'https://farm2.staticflickr.com/1622/24127012370_07edc62046_o.jpg',
   ],
 };
 

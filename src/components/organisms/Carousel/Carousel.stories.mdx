@@ -19,4 +19,7 @@ export const Template = ({ ...args }) => <Carousel {...args} />;
   <Story name="current image is last image" args={carouselDataLastImageMock}>
     {Template.bind({})}
   </Story>
+  <Story name="no images" args={{ currentImageIndex: 0, images: [] }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>

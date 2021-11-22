@@ -2,7 +2,10 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import { DirectionsType } from 'components/atoms/CarouselBtn';
-import { carouselDataFirstImageMock, carouselDataLastImageMock } from './Carousel.mock';
+import {
+  carouselDataFirstImageMock,
+  carouselDataLastImageMock,
+} from './Carousel.mock';
 import Carousel, { CarouselProps } from '.';
 
 type Props = Partial<CarouselProps>;
@@ -22,39 +25,60 @@ const setup = ({
 
 describe('organisms/Carousel', () => {
   it('should render component successfully', () => {
-    const { getByLabelText } = setup();
+    const { getByText } = setup();
 
-    expect(getByLabelText(/carousel/i)).toBeInTheDocument();
+    expect(
+      getByText(/Oops... There aren`t any images of the launch./i),
+    ).toBeInTheDocument();
   });
 
   it(`should call "onClick" function with last image index if user click ${DirectionsType.PREV} button on first image`, () => {
     const onClickSpy = jest.fn();
-    const { getByLabelText } = setup({ ...carouselDataFirstImageMock, onClick: onClickSpy });
+    const { getByLabelText } = setup({
+      ...carouselDataFirstImageMock,
+      onClick: onClickSpy,
+    });
 
-    const prevBtn = getByLabelText(new RegExp(`${DirectionsType.PREV}-btn`, 'i'));
+    const prevBtn = getByLabelText(
+      new RegExp(`${DirectionsType.PREV}-btn`, 'i'),
+    );
 
     fireEvent.click(prevBtn);
 
-    expect(onClickSpy).toBeCalledWith(carouselDataFirstImageMock.images.length - 1);
+    expect(onClickSpy).toBeCalledWith(
+      carouselDataFirstImageMock.images.length - 1,
+    );
   });
 
   it(`should call "onClick" function with previous image index if user click ${DirectionsType.PREV} button on not first image`, () => {
     const onClickSpy = jest.fn();
-    const { getByLabelText } = setup({ ...carouselDataLastImageMock, onClick: onClickSpy });
+    const { getByLabelText } = setup({
+      ...carouselDataLastImageMock,
+      onClick: onClickSpy,
+    });
 
-    const prevBtn = getByLabelText(new RegExp(`${DirectionsType.PREV}-btn`, 'i'));
+    const prevBtn = getByLabelText(
+      new RegExp(`${DirectionsType.PREV}-btn`, 'i'),
+    );
 
     fireEvent.click(prevBtn);
 
-    expect(onClickSpy).toBeCalledWith(carouselDataLastImageMock.currentImageIndex - 1);
+    expect(onClickSpy).toBeCalledWith(
+      carouselDataLastImageMock.currentImageIndex - 1,
+    );
   });
 
   it(`should call "onClick" function with first image index if user click ${DirectionsType.NEXT} button on last image`, () => {
     const onClickSpy = jest.fn();
     const firstImageIndex = 0;
-    const { getByLabelText } = setup({ ...carouselDataLastImageMock, onClick: onClickSpy });
+    const { getByLabelText } = setup({
+      ...carouselDataLastImageMock,
+      onClick: onClickSpy,
+    });
 
-    const nextBtn = getByLabelText(new RegExp(`${DirectionsType.NEXT}-btn`, 'i'));
+    const nextBtn = getByLabelText(
+      new RegExp(`${DirectionsType.NEXT}-btn`, 'i'),
+    );
 
     fireEvent.click(nextBtn);
 
@@ -63,12 +87,19 @@ describe('organisms/Carousel', () => {
 
   it(`should call "onClick" function with next image index if user click ${DirectionsType.NEXT} button on not last image`, () => {
     const onClickSpy = jest.fn();
-    const { getByLabelText } = setup({ ...carouselDataFirstImageMock, onClick: onClickSpy });
+    const { getByLabelText } = setup({
+      ...carouselDataFirstImageMock,
+      onClick: onClickSpy,
+    });
 
-    const nextBtn = getByLabelText(new RegExp(`${DirectionsType.NEXT}-btn`, 'i'));
+    const nextBtn = getByLabelText(
+      new RegExp(`${DirectionsType.NEXT}-btn`, 'i'),
+    );
 
     fireEvent.click(nextBtn);
 
-    expect(onClickSpy).toBeCalledWith(carouselDataFirstImageMock.currentImageIndex + 1);
+    expect(onClickSpy).toBeCalledWith(
+      carouselDataFirstImageMock.currentImageIndex + 1,
+    );
   });
 });

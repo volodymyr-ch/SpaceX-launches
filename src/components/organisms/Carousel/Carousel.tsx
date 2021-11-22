@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { CarouselBtn } from 'components';
+import { CarouselBtn, CarouselImages } from 'components';
 import { DirectionsType } from 'components/atoms/CarouselBtn';
 
 export type CarouselProps = {
@@ -34,40 +34,31 @@ export const Carousel: React.FC<CarouselProps> = ({
     directionsClickEvent[direction]();
   };
 
+  if (!images.length) {
+    return <span>Oops... There aren`t any images of the launch.</span>;
+  }
+
   return (
-    <Wrapper aria-label="carousel">
+    <Wrapper aria-label="carousel-wrapper">
       <StyledPrevBtn>
         <CarouselBtn direction={DirectionsType.PREV} onClick={onButtonClick} />
       </StyledPrevBtn>
       <StyledNextBtn>
         <CarouselBtn direction={DirectionsType.NEXT} onClick={onButtonClick} />
       </StyledNextBtn>
-      {images.length
-        && images.map(
-          (image, index) =>
-            index === currentImageIndex && (
-              <StyledImage key={image} src={image} alt="test-url" />
-            ),
-        )}
+      <CarouselImages images={images} currentImageIndex={currentImageIndex} />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   position: relative;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 1000px;
   max-height: 100vh;
   overflow: hidden;
-`;
-
-const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 `;
 
 const StyledNextBtn = styled.div`
