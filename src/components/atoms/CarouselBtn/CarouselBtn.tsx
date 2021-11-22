@@ -12,8 +12,8 @@ export type CarouselBtnProps = {
 };
 
 const buttonsLabel: { [key in DirectionsType]: React.ReactElement } = {
-  [DirectionsType.NEXT]: <span>&gt;</span>,
-  [DirectionsType.PREV]: <span>&lt;</span>,
+  [DirectionsType.NEXT]: <span>&#8594;</span>,
+  [DirectionsType.PREV]: <span>&#8592;</span>,
 };
 
 export const CarouselBtn: React.FC<CarouselBtnProps> = ({
@@ -32,13 +32,16 @@ export const CarouselBtn: React.FC<CarouselBtnProps> = ({
 const StyledBtn = styled.button`
   width: 42px;
   height: 42px;
-  font-size: 35px;
-  border: 0;
+  border: 1px solid #fff;
   border-radius: 50%;
-  color: #ffffff;
-  opacity: 0.5;
+  color: #fff;
+  font-weight: bold;
+  background: transparent;
+
 
   &:hover {
-    opacity: 0.8;
+    color: #000;
+    background: #fff;
+    cursor: pointer;
   }
 `;

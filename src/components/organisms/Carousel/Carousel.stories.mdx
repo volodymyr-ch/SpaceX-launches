@@ -1,0 +1,22 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import {
+  carouselDataFirstImageMock,
+  carouselDataLastImageMock,
+} from './Carousel.mock';
+import Carousel from './';
+
+export const Template = ({ ...args }) => <Carousel {...args} />;
+
+<Meta title="organisms/Carousel" component={Carousel} />
+
+# Carousel
+
+<Canvas>
+  <Story name="current image is first image" args={carouselDataFirstImageMock}>
+    {Template.bind({})}
+  </Story>
+  <Story name="current image is last image" args={carouselDataLastImageMock}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
