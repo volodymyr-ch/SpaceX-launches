@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from 'store/types';
 import { getLaunchDataRequest } from 'store/actions';
+import { LaunchTemplate } from 'components';
 
-const launchNumber = 30;
+const launchNumber = 44;
 
 type Props = {};
 
@@ -25,11 +26,12 @@ export const LaunchPage: React.FC<Props> = () => {
 
   return (
     <div aria-label="launch-page">
-      {data.links.flickr_images.length
-        ? data.links.flickr_images.map((image) => (
-          <img key={image} src={image} alt="test-url" />
-        ))
-        : null}
+      <LaunchTemplate
+        flightNumber={data.flight_number}
+        missionName={data.mission_name}
+        launchYear={data.launch_year}
+        images={data.links.flickr_images}
+      />
     </div>
   );
 };

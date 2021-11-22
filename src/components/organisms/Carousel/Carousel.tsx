@@ -59,6 +59,7 @@ const Wrapper = styled.div`
   max-width: 1000px;
   max-height: 100vh;
   overflow: hidden;
+  margin: auto;
 `;
 
 const StyledNextBtn = styled.div`

@@ -1,0 +1,16 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { launchTemplateDataMock } from './LaunchTemplate.mock';
+import LaunchTemplate from './';
+
+export const Template = ({ ...args }) => <LaunchTemplate {...args} />;
+
+<Meta title="templates/LaunchTemplate" component={LaunchTemplate} />
+
+# LaunchTemplate
+
+<Canvas>
+  <Story name="DSCOVR" args={{ ...launchTemplateDataMock }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

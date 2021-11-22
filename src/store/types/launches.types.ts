@@ -11,7 +11,7 @@ export interface GetLaunchDataRequest {
 export type LaunchDataType = {
   flight_number: number;
   mission_name: string;
-  launch_date_utc: Date | null;
+  launch_year: number;
   links: { flickr_images: string[] };
 };
 
