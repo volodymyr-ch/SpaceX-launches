@@ -47,6 +47,8 @@
       }
     ],
     "default-param-last": "off",
-    "implicit-arrow-linebreak": "off"
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "no-restricted-exports": "off"
   }
 }
