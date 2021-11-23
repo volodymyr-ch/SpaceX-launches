@@ -5,7 +5,7 @@ import { RootState } from 'store/types';
 import { getLaunchDataRequest } from 'store/actions';
 import { LaunchTemplate } from 'components';
 
-const launchNumber = 44;
+const launchNumber = 20;
 
 type Props = {};
 

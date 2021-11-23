@@ -46,6 +46,19 @@ export const Carousel: React.FC<CarouselProps> = ({
       <StyledNextBtn>
         <CarouselBtn direction={DirectionsType.NEXT} onClick={onButtonClick} />
       </StyledNextBtn>
+      <StyledCarouselDots>
+        <StyledList>
+          {images.map((url, index) => (
+            <StyledCarouselDot
+              key={`dot-${url}`}
+              isActive={currentImageIndex === index}
+              onClick={() => onClick(index)}
+            >
+              o
+            </StyledCarouselDot>
+          ))}
+        </StyledList>
+      </StyledCarouselDots>
       <CarouselImages images={images} currentImageIndex={currentImageIndex} />
     </Wrapper>
   );
@@ -74,4 +87,34 @@ const StyledPrevBtn = styled.div`
   left: 24px;
   cursor: pointer;
   z-index: 3;
+`;
+
+const StyledCarouselDots = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  z-index: 3;
+`;
+
+const StyledList = styled.ul`
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+`;
+
+const StyledCarouselDot = styled.li<{ isActive: boolean }>`
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  color: transparent;
+  margin: 0 6px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  ${({ isActive }) => (isActive ? 'background-color: transparent;' : null)}
+  &:hover {
+    background-color: transparent;
+  }
 `;

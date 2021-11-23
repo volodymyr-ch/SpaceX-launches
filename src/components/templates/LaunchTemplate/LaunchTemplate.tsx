@@ -37,5 +37,6 @@ export const LaunchTemplate: React.FC<LaunchTemplateProps> = ({
 };
 
 const Wrapper = styled.div`
+  max-width: 1000px;
   margin: auto;
 `;
