@@ -1,0 +1,15 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import Loader from './';
+
+export const Template = ({ ...args }) => <Loader {...args} />;
+
+<Meta title="atoms/Loader" component={Loader} />
+
+# Loader
+
+<Canvas>
+  <Story name="default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

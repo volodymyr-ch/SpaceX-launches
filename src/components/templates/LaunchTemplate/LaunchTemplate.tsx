@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Carousel } from 'components';
+import { Carousel, Loader } from 'components';
 
 export type LaunchTemplateProps = {
   flightNumber: number;
@@ -24,7 +24,7 @@ export const LaunchTemplate: React.FC<LaunchTemplateProps> = ({
   return (
     <Wrapper aria-label="launch-template">
       {loading ? (
-        'Loading...'
+        <Loader />
       ) : (
         <Carousel
           images={images}

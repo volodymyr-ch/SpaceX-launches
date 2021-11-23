@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 import { RootState } from 'store/types';
 import { getLaunchDataRequest } from 'store/actions';
 import { LaunchTemplate } from 'components';
 
-const launchNumber = 20;
+const launchNumber = 44;
 
 type Props = {};
 
@@ -21,7 +22,7 @@ export const LaunchPage: React.FC<Props> = () => {
   }, []);
 
   return (
-    <div aria-label="launch-page">
+    <Wrapper aria-label="launch-page">
       <LaunchTemplate
         flightNumber={data.flight_number}
         missionName={data.mission_name}
@@ -29,6 +30,11 @@ export const LaunchPage: React.FC<Props> = () => {
         images={data.links.flickr_images}
         loading={loading}
       />
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  background: linear-gradient(to right, #3a205c, #2c3a70);
+  height: 100vh;
+`;
