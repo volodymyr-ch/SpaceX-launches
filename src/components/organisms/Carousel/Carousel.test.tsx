@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
+import { withThemeProvider } from 'utils';
 import { DirectionsType } from 'components/atoms/CarouselBtn';
 import {
   carouselDataFirstImageMock,
@@ -16,11 +17,13 @@ const setup = ({
   onClick = jest.fn(),
 }: Props = {}) =>
   render(
-    <Carousel
-      currentImageIndex={currentImageIndex}
-      images={images}
-      onClick={onClick}
-    />,
+    withThemeProvider(
+      <Carousel
+        currentImageIndex={currentImageIndex}
+        images={images}
+        onClick={onClick}
+      />,
+    ),
   );
 
 describe('organisms/Carousel', () => {

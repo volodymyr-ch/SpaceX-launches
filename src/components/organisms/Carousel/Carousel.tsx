@@ -35,7 +35,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   };
 
   if (!images.length) {
-    return <span>Oops... There aren`t any images of the launch.</span>;
+    return <StyledEmptyBox>Oops... There aren`t any images of the launch.</StyledEmptyBox>;
   }
 
   return (
@@ -88,4 +88,13 @@ const StyledCarouselDots = styled.div`
   width: 100%;
   bottom: 20px;
   z-index: 3;
+`;
+
+const StyledEmptyBox = styled.span`
+  display: block;
+  margin-top 10px;
+  padding: 40px;
+  text-align: center;
+  font-family: ${({ theme }) => theme.fonts.mainFont};
+  color: ${({ theme }) => theme.colors.text.basic};
 `;

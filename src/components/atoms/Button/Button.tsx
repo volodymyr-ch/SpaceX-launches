@@ -23,10 +23,15 @@ const Wrapper = styled.button`
   color: #fff;
   padding: 10px;
   font-size: 16px;
-  &:hover {
+  transition: .3s;
+  &:hover:enabled {
     color: #000;
     background: #fff;
     cursor: pointer;
+  }
+  &:disabled {
+    cursor: initial;
+    opacity: .8;
   }
   @media only screen and (max-width: ${({ theme }) =>
     theme.breakPoints.mobile}) {

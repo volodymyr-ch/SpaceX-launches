@@ -30,8 +30,9 @@ export const CarouselImages: React.FC<CarouselImagesProps> = ({
 
 const activeImageWrapperStyles = `
   opacity: 1;
-  transition-duration: 1s;
+  transition-duration: 1.8s;
   transform: scale(1.03);
+  min-height: 200px;
 `;
 
 const defaultImageWrapperStyles = `

@@ -51,6 +51,7 @@ const StyledCarouselDot = styled.li<{ isActive: boolean }>`
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
+  transition: .3s;
   ${({ isActive }) => (isActive ? 'background-color: transparent;' : null)}
   &:hover {
     background-color: transparent;

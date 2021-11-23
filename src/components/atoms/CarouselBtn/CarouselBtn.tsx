@@ -38,6 +38,7 @@ const StyledBtn = styled.button`
   font-weight: bold;
   background: transparent;
   user-select: none;
+  transition: .3s;
   &:hover {
     color: #000;
     background: #fff;
