@@ -27,6 +27,7 @@ export const LaunchPage: React.FC<Props> = () => {
         flightNumber={data.flight_number}
         missionName={data.mission_name}
         launchYear={data.launch_year}
+        details={data.details}
         images={data.links.flickr_images}
         loading={loading}
       />
@@ -35,6 +36,5 @@ export const LaunchPage: React.FC<Props> = () => {
 };
 
 const Wrapper = styled.div`
-  background: linear-gradient(to right, #3a205c, #2c3a70);
   height: 100vh;
 `;

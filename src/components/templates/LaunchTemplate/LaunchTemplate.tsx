@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Carousel, Loader } from 'components';
+import { Carousel, LaunchDetails, Loader } from 'components';
 
 export type LaunchTemplateProps = {
   flightNumber: number;
   missionName: string;
   launchYear: number;
+  details: string;
   images: string[];
   loading: boolean;
 };
@@ -15,10 +16,10 @@ export const LaunchTemplate: React.FC<LaunchTemplateProps> = ({
   flightNumber,
   missionName,
   launchYear,
+  details,
   images,
   loading,
 }) => {
-  console.log('test', flightNumber, missionName, launchYear);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   return (
@@ -26,11 +27,19 @@ export const LaunchTemplate: React.FC<LaunchTemplateProps> = ({
       {loading ? (
         <Loader />
       ) : (
-        <Carousel
-          images={images}
-          currentImageIndex={currentImageIndex}
-          onClick={setCurrentImageIndex}
-        />
+        <>
+          <Carousel
+            images={images}
+            currentImageIndex={currentImageIndex}
+            onClick={setCurrentImageIndex}
+          />
+          <LaunchDetails
+            flightNumber={flightNumber}
+            missionName={missionName}
+            launchYear={launchYear}
+            details={details}
+          />
+        </>
       )}
     </Wrapper>
   );

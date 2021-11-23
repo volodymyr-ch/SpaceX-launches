@@ -17,6 +17,7 @@ const initialState: LaunchesState = {
     flight_number: 0,
     mission_name: '',
     launch_year: 0,
+    details: '',
     links: { flickr_images: [] },
   },
   loading: false,

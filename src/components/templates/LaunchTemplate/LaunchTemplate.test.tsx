@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
+import { withThemeProvider } from 'utils';
 import { launchTemplateDataMock } from './LaunchTemplate.mock';
 import LaunchTemplate, { LaunchTemplateProps } from '.';
 
@@ -10,17 +11,21 @@ const setup = ({
   flightNumber = 0,
   missionName = '',
   launchYear = 0,
+  details = '',
   images = [],
   loading = false,
 }: Props = {}) =>
   render(
-    <LaunchTemplate
-      flightNumber={flightNumber}
-      missionName={missionName}
-      launchYear={launchYear}
-      images={images}
-      loading={loading}
-    />,
+    withThemeProvider(
+      <LaunchTemplate
+        flightNumber={flightNumber}
+        missionName={missionName}
+        launchYear={launchYear}
+        details={details}
+        images={images}
+        loading={loading}
+      />,
+    ),
   );
 
 describe('templates/LaunchTemplate', () => {

@@ -1,6 +1,6 @@
 const colors = {
   text: {
-    basic: '#262626',
+    basic: '#fff',
   },
   errorColor: '#f44336',
 };

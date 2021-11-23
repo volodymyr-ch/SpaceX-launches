@@ -1,0 +1,16 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import { launchDetailsMock } from './LaunchDetails.mock';
+import LaunchDetails from './';
+
+export const Template = ({ ...args }) => <LaunchDetails {...args} />;
+
+<Meta title="molecules/LaunchDetails" component={LaunchDetails} />
+
+# LaunchDetails
+
+<Canvas>
+  <Story name="default" args={{ ...launchDetailsMock }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

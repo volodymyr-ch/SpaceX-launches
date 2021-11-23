@@ -1,5 +1,5 @@
 const fonts = {
-  mainFont: '"Roboto", "Helvetica", "Arial", sans-serif',
+  mainFont: '"Gill Sans", sans-serif',
 };
 
 export default fonts;
