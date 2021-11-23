@@ -25,7 +25,7 @@ export const LaunchDetails: React.FC<LaunchDetailsProps> = ({
 );
 
 const Wrapper = styled.div`
-  padding: 40px;
+  padding: 30px 40px;
   font-family: ${({ theme }) => theme.fonts.mainFont};
   color: ${({ theme }) => theme.colors.text.basic};
 `;
@@ -47,5 +47,6 @@ const StyledDescription = styled.p`
   @media only screen and (max-width: ${({ theme }) =>
     theme.breakPoints.mobile}) {
     font-size: 12px;
+    text-align: justify;
   }
 `;

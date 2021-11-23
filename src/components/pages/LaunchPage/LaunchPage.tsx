@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { RootState } from 'store/types';
 import { getLaunchDataRequest } from 'store/actions';
 import { LaunchTemplate } from 'components';
-
-const launchNumber = 44;
 
 type Props = {};
 
@@ -17,9 +15,9 @@ export const LaunchPage: React.FC<Props> = () => {
     ({ launches }: RootState) => launches,
   );
 
-  useEffect(() => {
-    dispatch(getLaunchDataRequest(launchNumber));
-  }, []);
+  const onLaunchIdChange = (id: number): void => {
+    dispatch(getLaunchDataRequest(id));
+  };
 
   return (
     <Wrapper aria-label="launch-page">
@@ -30,6 +28,7 @@ export const LaunchPage: React.FC<Props> = () => {
         details={data.details}
         images={data.links.flickr_images}
         loading={loading}
+        onLaunchIdChange={onLaunchIdChange}
       />
     </Wrapper>
   );

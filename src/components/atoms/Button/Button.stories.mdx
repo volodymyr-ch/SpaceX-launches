@@ -1,0 +1,18 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import Button from './';
+
+export const Template = ({ ...args }) => <Button {...args} />;
+
+<Meta title="atoms/Button" component={Button} />
+
+# Button
+
+<Canvas>
+  <Story name="default" args={{ label: 'Go to next' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="disabled" args={{ label: 'Go to prev', disabled: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

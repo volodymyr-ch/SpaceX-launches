@@ -14,6 +14,7 @@ const setup = ({
   details = '',
   images = [],
   loading = false,
+  onLaunchIdChange = jest.fn(),
 }: Props = {}) =>
   render(
     withThemeProvider(
@@ -24,6 +25,7 @@ const setup = ({
         details={details}
         images={images}
         loading={loading}
+        onLaunchIdChange={onLaunchIdChange}
       />,
     ),
   );
