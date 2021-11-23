@@ -8,6 +8,7 @@ export type LaunchTemplateProps = {
   missionName: string;
   launchYear: number;
   images: string[];
+  loading: boolean;
 };
 
 export const LaunchTemplate: React.FC<LaunchTemplateProps> = ({
@@ -15,21 +16,26 @@ export const LaunchTemplate: React.FC<LaunchTemplateProps> = ({
   missionName,
   launchYear,
   images,
+  loading,
 }) => {
   console.log('test', flightNumber, missionName, launchYear);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   return (
     <Wrapper aria-label="launch-template">
-      <Carousel
-        images={images}
-        currentImageIndex={currentImageIndex}
-        onClick={setCurrentImageIndex}
-      />
+      {loading ? (
+        'Loading...'
+      ) : (
+        <Carousel
+          images={images}
+          currentImageIndex={currentImageIndex}
+          onClick={setCurrentImageIndex}
+        />
+      )}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  margin: auto;  
+  margin: auto;
 `;

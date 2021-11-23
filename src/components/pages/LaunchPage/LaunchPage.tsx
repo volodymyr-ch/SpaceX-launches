@@ -12,17 +12,13 @@ type Props = {};
 export const LaunchPage: React.FC<Props> = () => {
   const dispatch = useDispatch();
 
-  const { data, loading, loaded } = useSelector(
+  const { data, loading } = useSelector(
     ({ launches }: RootState) => launches,
   );
 
   useEffect(() => {
     dispatch(getLaunchDataRequest(launchNumber));
   }, []);
-
-  useEffect(() => {
-    console.log('data', data, loading, loaded);
-  }, [data, loading, loaded]);
 
   return (
     <div aria-label="launch-page">
@@ -31,6 +27,7 @@ export const LaunchPage: React.FC<Props> = () => {
         missionName={data.mission_name}
         launchYear={data.launch_year}
         images={data.links.flickr_images}
+        loading={loading}
       />
     </div>
   );

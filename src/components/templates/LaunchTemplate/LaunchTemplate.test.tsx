@@ -11,6 +11,7 @@ const setup = ({
   missionName = '',
   launchYear = 0,
   images = [],
+  loading = false,
 }: Props = {}) =>
   render(
     <LaunchTemplate
@@ -18,6 +19,7 @@ const setup = ({
       missionName={missionName}
       launchYear={launchYear}
       images={images}
+      loading={loading}
     />,
   );
 

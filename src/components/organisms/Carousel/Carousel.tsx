@@ -66,10 +66,12 @@ const StyledNextBtn = styled.div`
   position: absolute;
   right: 24px;
   cursor: pointer;
+  z-index: 3;
 `;
 
 const StyledPrevBtn = styled.div`
   position: absolute;
   left: 24px;
   cursor: pointer;
+  z-index: 3;
 `;
