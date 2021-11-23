@@ -8,9 +8,24 @@ import {
 import { getLaunchDataSuccess, getLaunchDataFailure } from 'store/actions';
 import { getLaunchData as getLaunchDataRequest } from 'apis';
 
+const cacheImages = async (images: string[]) => {
+  const promises = await images.map((imageUrl) => new Promise((resolve, reject) => {
+    const img = new Image();
+
+    img.src = imageUrl;
+    img.onload = () => resolve(null);
+    img.onerror = () => reject();
+  }));
+
+  await Promise.all(promises);
+};
+
 function* getLaunchData(action: GetLaunchDataRequest) {
   try {
     const { data: res } = yield call(getLaunchDataRequest, action.payload);
+
+    const { links: { flickr_images: images } } = res;
+    yield cacheImages(images);
 
     yield put(getLaunchDataSuccess(res as LaunchDataType));
   } catch (error: any) {
