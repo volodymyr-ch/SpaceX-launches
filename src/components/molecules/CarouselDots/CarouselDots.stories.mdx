@@ -1,0 +1,21 @@
+import { Story, Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import CarouselDots from './';
+
+export const Template = ({ ...args }) => <CarouselDots {...args} />;
+
+<Meta title="molecules/CarouselDots" component={CarouselDots} />
+
+# CarouselDots
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      imagesLength: 10,
+      currentImageIndex: 2,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
