@@ -92,7 +92,7 @@ const StyledCarouselDots = styled.div`
 
 const StyledEmptyBox = styled.span`
   display: block;
-  margin-top 10px;
+  margin-top: 10px;
   padding: 40px;
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.mainFont};
